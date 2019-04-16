@@ -1,0 +1,85 @@
+package prj5;
+
+public class Song {
+
+    private String artist;
+    private String title;
+    private String genre;
+    private String date;
+    private Hobbies heard;
+    private Hobbies likes;
+
+
+    public Song(
+        String title,
+        String artist,
+        String date,
+        String genre,
+        Hobbies heard,
+        Hobbies likes) {
+        this.artist = artist;
+        this.title = title;
+        this.genre = genre;
+        this.date = date;
+        this.heard = heard;
+        this.likes = likes;
+    }
+
+
+    public String getArtist() {
+        return artist;
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+
+    public String getGenre() {
+        return genre;
+    }
+
+
+    public String getDate() {
+        return date;
+    }
+
+
+    public Hobbies getHeard() {
+        return heard;
+    }
+
+
+    public Hobbies getLikes() {
+        return likes;
+    }
+
+
+    public String toString() {
+        return "Song Title: " + getTitle() + "\nSong Artist: " + getArtist()
+            + "\nSong Genre: " + getGenre() + "\nSong Year: " + getDate()
+            + "\nHeard" + "\n" + heard.toString() + "\nLikes" + "\n" + likes
+                .toString();
+    }
+
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass().equals(obj.getClass())) {
+            Song song = (Song)obj;
+            return (this.getTitle() == song.getTitle()) && (this
+                .getArtist() == song.getArtist()) && (this.getGenre() == song
+                    .getGenre()) && (this.getDate() == song.getDate()) && (this
+                        .getHeard() == song.getHeard()) && (this
+                            .getLikes() == song.getLikes());
+        }
+        return false;
+    }
+
+}
